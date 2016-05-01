@@ -23,7 +23,7 @@ function possAnswers(array) {
 }
 //builds question form
 function question(array1,array2) {
-	for (var i=0; i<array2[h].length; i++){
+	for (var i=0; i<array2[i].length; i++){
 		array2[i].push(array1[i].answer);
 		$('#questionaire').append("<p id="+"Q"+i+">"+array1[i].question+"</p>");
 		console.log(array2[i]);
