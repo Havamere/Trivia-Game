@@ -24,43 +24,27 @@ function possAnswers(array) {
 	}
 	return array;
 }
+
 //builds question form
 function question(array1,array2) {
 	for (var i=0; i<4; i++){
 		array2[i].push(array1[i].answer);
-		console.log(array2[i]);
 		$('#questionaire').append("<p id="+"Q"+i+">"+array1[i].question+"</p>");
 		array2[i] = possAnswers(array2[i]);
-		console.log(array2[i]);
 		for(var j=0; j<array2[i].length; j++){
 		 	$('#questionaire').append("<input type="+"radio"+" name="+"question"+i+" value="+array2[i][j]+">"+array2[i][j]+"</input>")
 		}
 	}
 }
-
 question(trivia,notAnswers);
-//stores player selections into array
 
+//stores player selections into array
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var notAnswered = 0;
-//timer for questionaire
-$(document).ready(function(){
-	setTimeout(function(){
-		alert("You are about to test your knowledge of some of Planet Earth's strange facts.");
-		alert("Once you clear this message, you will have 5 minutes to answer 10 questions.  Good luck!")
-	},2000)
-	$("#timer")
-})
 
-	//Time's Up mechanic
-
-//checks player answers against correct answers
-	for (var a=0; a<array1.length; i++) {
-		if ($("name="+"question"+i))
-	}
 //time conversion mechanic
-var timeConverter = function(t){
+function timeConverter (t) {
     var minutes = Math.floor(t/60);
     var seconds = t - (minutes * 60);
     if (seconds < 10){
@@ -73,3 +57,24 @@ var timeConverter = function(t){
     }
     return minutes + ":" + seconds;
  }
+//timer for questionaire
+$(document).ready(function(){
+	setTimeout(function(){
+		alert("You are about to test your knowledge of some of Planet Earth's strange facts.");
+		alert("Once you clear this message, you will have 5 minutes to answer 10 questions.  Good luck!")
+	},2000);
+	time = 300
+	$("#timer").html("05:00");
+	function countDown(){
+		time--;
+		currentTime = timeConverter(time);
+		$("#timer").html(currentTime);
+	} 
+	counter = setInterval(countDown,1000);
+//Time's Up mechanic
+})
+
+//checks player answers against correct answers
+	// for (var a=0; a<trivia.length; a++) {
+	// 	if ($("name="+"question"+a)){}
+	// }
