@@ -41,14 +41,24 @@ function question(array1,array2) {
 question(trivia,notAnswers);
 //stores player selections into array
 
-//checks player answers against correct answers
-
-
-
+var correctAnswers = 0;
+var incorrectAnswers = 0;
+var notAnswered = 0;
 //timer for questionaire
+$(document).ready(function(){
+	setTimeout(function(){
+		alert("You are about to test your knowledge of some of Planet Earth's strange facts.");
+		alert("Once you clear this message, you will have 5 minutes to answer 10 questions.  Good luck!")
+	},2000)
+	$("#timer")
+})
 
 	//Time's Up mechanic
 
+//checks player answers against correct answers
+	for (var a=0; a<array1.length; i++) {
+		if ($("name="+"question"+i))
+	}
 //time conversion mechanic
 var timeConverter = function(t){
     var minutes = Math.floor(t/60);
