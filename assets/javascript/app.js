@@ -2,13 +2,16 @@
 var trivia = [
 	{number: 0, question: "Where is the highest point in the world?", answer: "Mount Chimborazo"},
 	{number: 1, question: "In what country can you weigh less, just by living there?", answer: "Canada"},
-
+	{number: 2, question: "Hurg de gurge in flibben flabben?", answer: "Foobar"},
+	{number: 3, question: "How are you feeling?", answer: "Great"}
 ]
 
 //object block stores other answers
 var notAnswers = [
 	["Mount Kilimanjaro", "Mount Everest", "Mount McKinley"],
-	["Europe", "Chile", "Japan"]
+	["Europe", "Chile", "Japan"],
+	["Bass", "Heliotrope", "Teppanyaki"],
+	["Tired", "Bad", "Malcontent"]
 ]
 
 //randomizer for answer placement
@@ -23,16 +26,16 @@ function possAnswers(array) {
 }
 //builds question form
 function question(array1,array2) {
-	for (var i=0; i<array2[i].length; i++){
+	for (var i=0; i<4; i++){
 		array2[i].push(array1[i].answer);
-		$('#questionaire').append("<p id="+"Q"+i+">"+array1[i].question+"</p>");
 		console.log(array2[i]);
-		array2 = possAnswers(array2);
+		$('#questionaire').append("<p id="+"Q"+i+">"+array1[i].question+"</p>");
+		array2[i] = possAnswers(array2[i]);
+		console.log(array2[i]);
 		for(var j=0; j<array2[i].length; j++){
-		 	$('#questionaire').append("<input type='radio' name="+"question"+i+" value="+array2[i][j]+">"+array2[i][j]+"</input>")
+		 	$('#questionaire').append("<input type="+"radio"+" name="+"question"+i+" value="+array2[i][j]+">"+array2[i][j]+"</input>")
 		}
 	}
-	console.log(array2);
 }
 
 question(trivia,notAnswers);
