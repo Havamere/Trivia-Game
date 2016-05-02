@@ -32,16 +32,11 @@ function question(array1,array2) {
 		$('#questionaire').append("<p id="+"Q"+i+">"+array1[i].question+"</p>");
 		array2[i] = possAnswers(array2[i]);
 		for(var j=0; j<array2[i].length; j++){
-		 	$('#questionaire').append("<input type="+"radio"+" name="+"question"+i+" value="+array2[i][j]+">"+array2[i][j]+"</input>")
+		 	$('#questionaire').append("<input type="+"radio"+" name="+"question"+i+" value="+array2[i][j]+" id="+array2[i][j]+">"+array2[i][j]+"</input>")
 		}
 	}
 }
 question(trivia,notAnswers);
-
-//stores player selections into array
-var correctAnswers = 0;
-var incorrectAnswers = 0;
-var notAnswered = 0;
 
 //time conversion mechanic
 function timeConverter (t) {
@@ -62,17 +57,34 @@ $(document).ready(function(){
 	setTimeout(function(){
 		alert("You are about to test your knowledge of some of Planet Earth's strange facts.");
 		alert("Once you clear this message, you will have 5 minutes to answer 10 questions.  Good luck!")
-	},2000);
+	},1000);
 	time = 300
 	$("#timer").html("05:00");
 	function countDown(){
 		time--;
 		currentTime = timeConverter(time);
 		$("#timer").html(currentTime);
+		console.log(time);
+		//Time's Up mechanic
+		if (time == 0) {
+			for (var e=0; e<trivia.length; e++){
+				if ($('#'))
+				
+			}
+			$('#main-section').empty();
+			$('#main-section').append("<h1>Time\'s Up!</h1>");
+			$('#main-section').append("<p>You got "+correctAnswers+" correct answers!</p>");
+			$('#main-section').append("<p>You got "+incorrectAnswers+" incorrect answers.</p>");
+			$('#main-section').append("<p>You got "+notAnswered+" unanswered answers.</p>");
+		}
 	} 
 	counter = setInterval(countDown,1000);
-//Time's Up mechanic
 })
+
+//stores player selections into array
+var correctAnswers = 0;
+var incorrectAnswers = 0;
+var notAnswered = 0;
 
 //checks player answers against correct answers
 	// for (var a=0; a<trivia.length; a++) {
