@@ -70,9 +70,9 @@ $(document).ready(function(){
 		//Time's Up mechanic
 		if (time == 0) {
 			for (var e=0; e<trivia.length; e++){
-				if ($('#question'+e).val() == trivia[e].answer){
+				if ($('#question'+e+':checked').val() == trivia[e].answer){
 					correctAnswers++;
-				} else if ($('#question'+e).is(':checked') == false){
+				} else if ($('#question'+e+':checked').val() == undefined){
 					notAnswered++;
 				} else {
 					incorrectAnswers++;
