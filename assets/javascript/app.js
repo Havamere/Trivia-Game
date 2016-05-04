@@ -6,8 +6,8 @@ var trivia = [
 	{number: 3, question: "How long would a day on Earth be without the moon??", answer: "6-8 HRS"},
 	{number: 4, question: "Which volcano is so active, it is constantly erupting and has been nicknamed 'The Lighthouse of the Mediterranean?", answer: "Stromboli Volcano"},
 	{number: 5, question: "This phenomena is only found on Earth, but, what life sustaining substance is naturally found in 3 states of matter?", answer: "Water"},
-	{number: 6, question: "Death valley is the current record holder for 'Hottest Place on Earth', but just how hot did it get?", answer:"134\&#8457"},
-	{number: 7, question: "Antartica, of course, is the coldest spot on the planet, but can you guess the lowest temperature it has reached?", answer: "-128\&#8457"},
+	{number: 6, question: "Death valley is the current record holder for 'Hottest Place on Earth', but just how hot did it get?", answer:"134 degrees F"},
+	{number: 7, question: "Antartica, of course, is the coldest spot on the planet, but can you guess the lowest temperature it has reached?", answer: "-128 degrees F"},
 ]
 
 //object block stores other answers
@@ -18,8 +18,8 @@ var notAnswers = [
 	["48-50 HRS", "12 HRS", "2-4 HRS"],
 	["Mount Etna", "Santa Margarida Volcano", "Ischia Island"],
 	["Soil", "Air", "Fire"],
-	["125\&#8457","150\&#8457","128\&#8457"],
-	["-101\&#8457","-121\&#8457","-118\&#8457"],
+	["125 degrees F","150 degrees F","128 degrees F"],
+	["-101 degrees F","-121 degrees F","-118 degrees F"],
 ]
 
 //randomizer for answer placement
