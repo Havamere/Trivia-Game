@@ -19,11 +19,24 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
 }
 
+h1 {
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    text-align: center;
+}
+
 h3 {
     font-size: 1.33em;
     margin-top: 1em;
     margin-bottom: 1em;
     color: green;
+}
+
+p {
+    font-size: 18px;
+    color: blue;
+    text-align: center;
 }
 
 /*Spacing Divs*/
@@ -36,6 +49,11 @@ h3 {
 	width: 100%;
 	max-width: 960px;
 	clear: both;
+}
+
+.push {
+    height: 105px;
+    clear: both;
 }
 
 .container {
@@ -61,7 +79,12 @@ header {
 	font-size: 22px;
 }
 
-
+#timer {
+    width: 100%;
+    text-align: center;
+    font-family: Cooper Black, sans-serif;
+    font-size: 44px;
+}
 
 
    /*Footer*/
